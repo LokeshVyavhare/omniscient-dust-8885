@@ -1,10 +1,10 @@
 import './App.css';
-import { ChakraProvider } from '@chakra-ui/react';
+
 
 function App() {
   return (
     <div className="App">
-
+      <h1>App</h1>
     </div>
   );
 }
