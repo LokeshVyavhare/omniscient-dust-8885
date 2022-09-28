@@ -1,0 +1,42 @@
+{
+    "header": {
+        "title": "For Operation Teams",
+        "subTitle": "Optimize support for your HR, facilities, marketing, and sales teams with ease"
+    },
+    "main": [
+        {
+            "id": "OPsupport_1",
+            "subhead": "support",
+            "head": "Help Desk",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-helpdesk.svg",
+            "desc": "Organize and intelligently deflect tickets with a unified IT Help Desk Software"
+        },
+        {
+            "id": "OPsupport_2",
+            "subhead": "automation technology",
+            "head": "Work Flows",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-workflows.svg",
+            "desc": "Reduce costs and increase productivity with end-to-end process automation"
+        },
+        {
+            "id": "OPsupport_3",
+            "subhead": "AI TECHNOLOGY",
+            "head": "Assist AI",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-assist-ai.svg",
+            "desc": "Provide IT support directly from Slack and Microsoft Teams"
+        },
+        {
+            "id": "customerService_4",
+            "subhead": "REPORTING & ANALYTICS",
+            "head": "Business Intelligence",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-bi.svg",
+            "desc": "Turn insight into advantage with cross-functional reports & dashboards"
+        }
+    ],
+    "aside": {
+        "title": "GETTING STARTED",
+        "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-show-item-1.png",
+        "desc1": "null",
+        "desc2": "Watch On Demand"
+    }
+}

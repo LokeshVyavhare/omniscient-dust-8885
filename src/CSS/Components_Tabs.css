@@ -1,0 +1,50 @@
+.popUpTabTrigger {
+    padding: 25px 35px;
+    display: block;
+    color: rgb(165, 163, 163)
+}
+
+.popUpTabTriggerB {
+    padding: 10px 20px;
+    color: rgb(165, 163, 163)
+}
+
+.popUpTabTrigger:hover,
+.popUpTabTriggerB:hover {
+    color: black;
+    font-weight: 700;
+}
+
+.popUpTabDisaplay,
+.popUpTabDisaplayB {
+    border: 1px solid rgb(242, 242, 242);
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.452);
+    left: 0;
+
+
+}
+
+.popUpbox {
+    width: 100%;
+    background-color: white;
+
+}
+
+.popUpbox>* {
+    animation: normal 0.2s fade-static;
+}
+
+@keyframes fade-static {
+    from {
+        opacity: 0;
+        transform: translate(2%);
+    }
+
+    to {
+        opacity: 100%;
+        transform: translate(0);
+    }
+}
