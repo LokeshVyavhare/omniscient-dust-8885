@@ -1,0 +1,56 @@
+{
+    "header": {
+        "title": "For Support Teams",
+        "subTitle": "Boost your support operations and ensure happy customers"
+    },
+    "main": [
+        {
+            "id": "customerService_1",
+            "subhead": "support",
+            "head": "Help Desk",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-helpdesk.svg",
+            "desc": "All-in-one help desk ticketing system to provide better support for your customers"
+        },
+        {
+            "id": "customerService_2",
+            "subhead": "automation technology",
+            "head": "Work Flows",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-workflows.svg",
+            "desc": "Ensure speedy resolution of tickets with end-to-end process automation"
+        },
+        {
+            "id": "customerService_3",
+            "subhead": "chat solution",
+            "head": "Live Chat",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-livechat.svg",
+            "desc": "Chat with your customers instantly on mobile, desktop, and web"
+        },
+        {
+            "id": "customerService_4",
+            "subhead": "REPORTING & ANALYTICS",
+            "head": "Business Intelligence",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-bi.svg",
+            "desc": "Make data-driven decisions & better serve your customers with reports and analytics"
+        },
+        {
+            "id": "customerService_5",
+            "subhead": "AI SOLUTION",
+            "head": "Chatbot",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-chatbot.svg",
+            "desc": "Engage and reach your customers 24x7 with ready-to-go chatbots"
+        },
+        {
+            "id": "customerService_6",
+            "subhead": "MOBILE SOLUTION",
+            "head": "In-App Chat",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-inapp-chat.svg",
+            "desc": "Manage tickets, collaborate with ease, and track performance on the move"
+        }
+    ],
+    "aside": {
+        "title": "CUSTOMER STORY",
+        "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-show-item-3.jpg",
+        "desc1": "HappyFox knows the next “big thing” in customer support",
+        "desc2": "Martin Hartvigsen, Director, Global Technical Support at Jabra GN"
+    }
+}

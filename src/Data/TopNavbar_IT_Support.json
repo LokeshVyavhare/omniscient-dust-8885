@@ -1,0 +1,35 @@
+{
+    "header": {
+        "title": "For IT Teams",
+        "subTitle": "Adopt advanced, modern, and unified support solutions for your IT team"
+    },
+    "main": [
+        {
+            "id": "ITsupport_1",
+            "subhead": "support",
+            "head": "Help Desk",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-helpdesk.svg",
+            "desc": "Organize and intelligently deflect tickets with a unified IT Help Desk Software"
+        },
+        {
+            "id": "ITsupport_2",
+            "subhead": "automation technology",
+            "head": "Work Flows",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-workflows.svg",
+            "desc": "Reduce costs and increase productivity with end-to-end process automation"
+        },
+        {
+            "id": "ITsupport_3",
+            "subhead": "AI TECHNOLOGY",
+            "head": "Assist AI",
+            "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-logo-assist-ai.svg",
+            "desc": "Provide IT support directly from Slack and Microsoft Teams"
+        }
+    ],
+    "aside": {
+        "title": "FEATURED",
+        "image": "https://assets.www.happyfox.com/v2/images/site-nav/menu-show-item-2.jpg",
+        "desc1": "null",
+        "desc2": "Top 7 HappyFox Features to Step Up Your IT Support Game"
+    }
+}
