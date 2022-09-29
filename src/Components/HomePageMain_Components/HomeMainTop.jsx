@@ -94,7 +94,8 @@ export const HomeMainTop = () => {
         </Box>
         {/* Section 6 */}
         <Box className='grad' w='100%' h='100vh' overflow={'hidden'}>
-           
+
+
 
         </Box>
 
