@@ -6,6 +6,8 @@ import {
     Image,
 } from '@chakra-ui/react'
 
+import { ChevronRightIcon } from '@chakra-ui/icons'
+
 const data = {
     overview: [
         {
@@ -100,14 +102,14 @@ const styles = {
 
 export const Features = () => {
     return <Box className='popUpbox'>
-        <SimpleGrid templateColumns={['1fr 2fr 1fr']} p='30px'>
+        <SimpleGrid templateColumns={['1fr 3fr 1fr']} p='30px'>
 
 
-            <Box>
+            <Box p='15px'>
                 {/* OverView */}
 
                 <Text {...styles.title1}>OVERVIEW</Text>
-                <Flex direction={'column'}>
+                <Flex direction={'column'} gap={'30px'}>
 
                     {data.overview.map((item) => <Flex key={item.id}>
 
@@ -123,10 +125,10 @@ export const Features = () => {
             </Box>
 
 
-            <SimpleGrid>
+            <SimpleGrid p='15px'>
                 {/* OverView */}
                 <Text {...styles.title1}>Features</Text>
-                <SimpleGrid templateColumns={['1fr 1fr']} gap={''}>
+                <SimpleGrid templateColumns={['1fr 1fr']} gap={'30px'}>
                     {data.features.map((item) => <Flex key={item.id}>
                         <Box><Image src={item.image} {...styles.imageSm} /></Box>
                         <Flex direction={'column'}>
@@ -134,11 +136,14 @@ export const Features = () => {
                             <Text {...styles.desc}>{item.subTitle}</Text>
                         </Flex>
                     </Flex>)}
+                    <Box w='200px' borderRadius={'20px'} bg='rgb(230,230,230)' p='10px 20px'>
+                        See More Features <ChevronRightIcon />
+                    </Box>
                 </SimpleGrid>
             </SimpleGrid>
 
 
-            <SimpleGrid>
+            <SimpleGrid p='15px'>
                 <Text {...styles.title1}>integrations</Text>
                 <Flex>
                     <Image {...styles.imageSm} src='https://assets.www.happyfox.com/v2/images/site-nav/hf-int-icon.svg' />
