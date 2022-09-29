@@ -47,7 +47,7 @@ export const NavbarMain = () => {
         </Flex>
 
         {/* Sub Navbar */}
-        <Flex justify={'space-between'} boxShadow='lg' align='center' bg='#ffffff' color={'grey'} p='10px 75px'>
+        <Flex justify={'space-between'} boxShadow='lg' align='center' bg='#ffffff' color={'grey'} p='10px 75px' mb='0'>
             <NavLink to='/'>
                 <Box>
                     <Image w={['120px']} src='https://assets.www.happyfox.com/v2/images/site-nav/helpdesk-logo.svg' alt='logo' />
