@@ -1,0 +1,109 @@
+[
+    {
+        "head": "FEATURES",
+        "subs": [
+            "Email Ticketing",
+            "Knowledge Base",
+            "Community Forums",
+            "Help Desk Reporting",
+            "Help Desk Automation",
+            "Multilingual Help Desk",
+            "Self Service Portal",
+            "SLA Management",
+            "Satisfaction Survey",
+            "Email Notification",
+            "Help Desk Customization",
+            "Help Desk Ticket Features",
+            "Multilingual Knowledge Base",
+            "Internal Knowledge Base",
+            "HappyFox SMS",
+            "Asset Management",
+            "Task Management",
+            "Agent Scripting"
+        ]
+    },
+    {
+        "head": "FOR BUSINESSES",
+        "subs": [
+            "Enterprise",
+            "Small-Business"
+        ]
+    },
+    {
+        "head": "FOR INDUSTRIES",
+        "subs": [
+            "Education, Retail, Travel,",
+            "IT Services, Telecom, Government,",
+            "Non-Profit Organizations,",
+            "Healthcare, Real Estate, Airlines"
+        ]
+    },
+    {
+        "head": "FOR TEAMS",
+        "subs": [
+            "HR, Facilities, Marketing,",
+            "Sales, Customer Support"
+        ]
+    },
+    {
+        "head": "COMPARE",
+        "subs": [
+            "Zendesk vs HappyFox",
+            "Freshdesk vs HappyFox",
+            "Kayako vs HappyFox",
+            "Zohodesk vs HappyFox",
+            "Gmail Alternative for Support"
+        ]
+    },
+    {
+        "head": "USE CASES",
+        "subs": [
+            "Help Desk Software",
+            "Ticketing System",
+            "Shared Inbox Software",
+            "Trouble Ticket Management",
+            "Issue Tracking Software",
+            "Customer Service",
+            "Email Support Software",
+            "Customer Complaint Management",
+            "Internal Help Desk Software",
+            "Ticket Tracking Software",
+            "Contact Center Software",
+            "IT Help Desk Software",
+            "Case Management Software",
+            "Cloud Help Desk",
+            "Mobile Help Desk",
+            "Remote Customer Support",
+            "Multi-Brand Helpdesk"
+        ]
+    },
+    {
+        "head": "RESOURCES",
+        "subs": [
+            "E-Books & Guides",
+            "Webinars",
+            "Customer Stories",
+            "Videos",
+            "Blog",
+            "Help Desk API Docs"
+        ]
+    },
+    {
+        "head": "COMPANY",
+        "subs": [
+            "About Us",
+            "Our Customers",
+            "Jobs",
+            "VidePress & Mediaos"
+        ]
+    },
+    {
+        "head": "CONTACT US",
+        "subs": [
+            "Contact Sales",
+            "Get Support",
+            "1-XXXX-XXX-XX20",
+            "******@******.com"
+        ]
+    }
+]

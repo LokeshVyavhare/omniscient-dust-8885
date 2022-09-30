@@ -47,3 +47,15 @@
   transition: 0.2s;
   font-weight: 700;
 }
+
+.textHoverFFF:hover {
+  color: #fff
+}
+
+.stickTop0 {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  z-index: 15;
+  /* required */
+}
