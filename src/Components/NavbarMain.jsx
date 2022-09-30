@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom'
 import { Tabs } from './TopNavComponents/Tabs'
 import { TabsB } from './TopNavComponents/TabsB'
 import { TabPopUp } from './TopNavComponents/TabPopUp'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import customerData from '../Data/TopNavbar_Customer-Service.json'
 import ItsupportData from '../Data/TopNavbar_IT_Support.json'
 import OpsupportData from '../Data/TopNavbar_Operations_Support.json'
@@ -27,9 +27,11 @@ const tabLayout = {
 }
 
 export const NavbarMain = () => {
+
     const [active, setActive] = useState(null);
+    const [scroll, setScroll] = useState(false);
     // console.log(customerData)
-    return <Box>
+    return <Box className='stickTop0'>
         {/* main Navbar */}
         <Flex justify={'space-between'} bg='#f4f6f6' color={'grey'} align='center' p='0 75px'>
             <NavLink to='/'>

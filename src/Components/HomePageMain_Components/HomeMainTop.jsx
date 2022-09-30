@@ -23,12 +23,12 @@ const data_Ai = [
         text1: 'Ease your day with a smart help desk software',
         text2: 'Outsource complex and redundant workflows to a powerful smart rules engine.'
     }, {
-        id: 'data_Ai2',
+        id: 'data_Ai3',
         image: 'https://assets.www.happyfox.com/v2/images/analyse-icon.svg',
         text1: 'Analyse help desk metrics & create solid actions',
         text2: 'A ticketing system that can crunch your support process data.'
     }, {
-        id: 'data_Ai2',
+        id: 'data_Ai4',
         image: 'https://assets.www.happyfox.com/v2/images/setting-icon.svg',
         text1: 'Tailor your support ticket system in all forms',
         text2: 'Create your own custom fields, workflows & personalize the support experience.'
