@@ -1,6 +1,7 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react"
+import { Box, Flex, Image, Heading, Text } from "@chakra-ui/react"
 import { Tabs } from '../TopNavComponents/Tabs'
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { TabsQ } from './TabsQ'
 import './TabQ.css'
 
@@ -19,7 +20,15 @@ const styles = {
 
 export const SlidingSection = () => {
     const [active, setActive] = useState('show1');
-    return <Box bg='#fff' >
+    return <Box bg='#fff' p='35px 0' h={'800px'} textAlign={'center'} >
+        <Box w='60%' m='0 auto 30px'>
+            <Heading fontWeight={'500'} mb='20px'>Provide Exceptional</Heading>
+            <Heading fontWeight={'700'} mb='20px'>Customer Support. Everyday.</Heading>
+            <Text mb='20px' fontSize={'15px'} color='grey'>Meet HappyFox, a practical help desk and customer support software solution. Reduce chaos and bring order to your support process with a robust support ticket system, self-service knowledge base and community forums.</Text>
+        </Box>
+        <Box m='3em auto' w={['500px']}>
+            <NavLink to='/signup'><Box className='demoButton'>Get a Demo</Box></NavLink>
+        </Box>
         <Flex justify={'space-around'} w='70%' m='auto'>
             <TabsQ text='Keep everything together' name='show1' active={active} setActive={setActive} >
                 <Flex className="popupFlex">
@@ -56,5 +65,6 @@ export const SlidingSection = () => {
                 </Flex>
             </TabsQ>
         </Flex>
-    </Box>
+
+    </Box >
 }
