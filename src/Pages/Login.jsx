@@ -8,10 +8,39 @@ import {
     Checkbox
 
 } from "@chakra-ui/react"
+import { useRef, useState } from "react"
 import { Footer } from '../Components/HomePageMain_Components/Footer'
-import { NavbarMain } from "../Components/NavbarMain"
+import axios from "axios"
 
 export const Login = () => {
+
+    const inpEmail = useRef(null);
+    const inpPass = useRef(null);
+    const [loginStatus, setlgStatus] = useState(false);
+
+
+    const submitForm = () => {
+        axios.get(`https://lv-23-mock-servertest.onrender.com/users`).then((res) => {
+
+
+            const user = res.data.filter((i) => inpEmail.current.value === i.email)[0]
+
+            if (user === undefined) {
+                setlgStatus(true);
+            } else if (user.pass !== inpPass.current.value) {
+
+            } else if (user.pass === inpPass.current.value) {
+
+            }
+            inpEmail.current.value = ''
+            inpPass.current.value = '';
+        })
+
+    }
+
+
+
+
     return <Box>
         <Flex>
             <Box w='50%' pt='100px'>
@@ -24,12 +53,17 @@ export const Login = () => {
                     <Heading w='fit-content' m='auto' mb='35px' fontWeight='500'>Log into <br /> HappyFox Help Desk</Heading>
 
                     <FormControl display={'flex'} flexDirection='column' align='center'>
+
                         <FormLabel>Email address</FormLabel>
-                        <Input type='email' mb='25px' placeholder='Enter Your Email Here' />
+                        <Input type='email' ref={inpEmail} mb='25px' placeholder='Enter Your Email Here' />
+
                         <FormLabel>Password</FormLabel>
-                        <Input type='password' placeholder='Enter Password' />
+                        <Input type='password' ref={inpPass} placeholder='Enter Password' />
+
                         <Checkbox defaultChecked m='25px auto'>Keep Me Signed in</Checkbox>
-                        <Input type='submit' w='100px' bg='#ef4f12' color='#fff' m='30px auto 10px' value='Sign In' />
+
+                        <Input onClick={submitForm} type='submit' className="demoButton" value='Sign In' />
+
                     </FormControl>
                 </Box>
             </Box>

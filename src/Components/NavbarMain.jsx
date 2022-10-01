@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom'
 import { Tabs } from './TopNavComponents/Tabs'
 import { TabsB } from './TopNavComponents/TabsB'
 import { TabPopUp } from './TopNavComponents/TabPopUp'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import customerData from '../Data/TopNavbar_Customer-Service.json'
 import ItsupportData from '../Data/TopNavbar_IT_Support.json'
 import OpsupportData from '../Data/TopNavbar_Operations_Support.json'
@@ -30,10 +30,24 @@ export const NavbarMain = () => {
 
     const [active, setActive] = useState(null);
     const [scroll, setScroll] = useState(false);
+    const timeOut = useRef(null)
+
+
+    window.onscroll = function () {
+        if (window.scrollY > 150) {
+            setScroll(true);
+            setActive(null)
+
+        } else {
+            setScroll(false)
+        }
+
+
+    }
     // console.log(customerData)
     return <Box className='stickTop0'>
         {/* main Navbar */}
-        <Flex justify={'space-between'} bg='#f4f6f6' color={'grey'} align='center' p='0 75px'>
+        {scroll ? null : <Flex justify={'space-between'} bg='#f4f6f6' color={'grey'} align='center' p='0 75px'>
             <NavLink to='/'>
                 <Box>
                     <Image src='https://assets.www.happyfox.com/v2/images/site-nav/topbar-logo-black.svg' alt='logo' />
@@ -46,7 +60,8 @@ export const NavbarMain = () => {
             </Flex>
             <NavLink to='/login'><Box {...tabLayout}>Login</Box></NavLink>
 
-        </Flex>
+        </Flex>}
+
 
         {/* Sub Navbar */}
         <Flex justify={'space-between'} boxShadow='lg' align='center' bg='#ffffff' color={'grey'} p='10px 75px' mb='0'>

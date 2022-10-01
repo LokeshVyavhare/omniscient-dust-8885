@@ -4,7 +4,7 @@ import { NavbarMain } from "./Components/NavbarMain"
 
 
 function App() {
-  return <div>
+  return <div style={{ paddingTop: '200px' }}>
     <NavbarMain />
     <AllRoutes />
   </div>
