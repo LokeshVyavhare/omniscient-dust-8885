@@ -8,33 +8,50 @@ import {
     Checkbox
 
 } from "@chakra-ui/react"
-import { useRef, useState } from "react"
+import { useRef, useState, useContext, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+import { AuthContext } from '../Contexts/AuthContext'
 import { Footer } from '../Components/HomePageMain_Components/Footer'
 import axios from "axios"
+import { checkUser } from "../Functions/login"
 
 export const Login = () => {
 
     const inpEmail = useRef(null);
     const inpPass = useRef(null);
     const [loginStatus, setlgStatus] = useState(false);
+    const navigator = useNavigate();
+
+    const { auth, login } = useContext(AuthContext);
 
 
-    const submitForm = () => {
-        axios.get(`https://lv-23-mock-servertest.onrender.com/users`).then((res) => {
+    useEffect(() => {
+        if (auth.status) {
+            navigator('/');
+        }
+    }, [])
+
+    const submitForm = async () => {
+        let userData = {
+            email: inpEmail.current.value,
+            password: inpPass.current.value
+        }
+        let response = await checkUser(userData);
 
 
-            const user = res.data.filter((i) => inpEmail.current.value === i.email)[0]
+        if (!response.userStatus) {
+            alert('wrong username')
+        } else if (!response.passStatus) {
+            alert('Wrong Password')
+        } else if (response.passStatus) {
+            console.log(response)
+            alert(`Successfully logged in as ${response.user.name}`);
+            login(response.user);
+            navigator('/');
 
-            if (user === undefined) {
-                setlgStatus(true);
-            } else if (user.pass !== inpPass.current.value) {
-
-            } else if (user.pass === inpPass.current.value) {
-
-            }
-            inpEmail.current.value = ''
-            inpPass.current.value = '';
-        })
+        } else {
+            alert('something Went wrong please try again')
+        }
 
     }
 
@@ -42,7 +59,7 @@ export const Login = () => {
 
 
     return <Box>
-        <Flex direction={['row']} m='auto' h='90vh'>
+        <Flex direction={['row']} m='auto'>
             <Box w={['95%', '93%', '90%', '50%']} pt='100px' mx='auto' >
                 < Box w={['90%', '90%', '90%', '500px']} maxW='500px' m=' auto auto 150px' borderRadius='25px' shadow={'lg'} border='1px solid rgb(235,235,235)' p='35px' >
 

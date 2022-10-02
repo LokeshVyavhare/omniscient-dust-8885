@@ -7,11 +7,11 @@ import {
 
 
 } from '@chakra-ui/react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Tabs } from './TopNavComponents/Tabs'
 import { TabsB } from './TopNavComponents/TabsB'
 import { TabPopUp } from './TopNavComponents/TabPopUp'
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import customerData from '../Data/TopNavbar_Customer-Service.json'
 import ItsupportData from '../Data/TopNavbar_IT_Support.json'
 import OpsupportData from '../Data/TopNavbar_Operations_Support.json'
@@ -19,6 +19,7 @@ import { Features } from './SubNav_components/Features'
 import { Pricing } from './SubNav_components/Pricing'
 import { Resources } from './SubNav_components/Resources'
 import { Solutions } from './SubNav_components/Solutions'
+import { AuthContext } from '../Contexts/AuthContext'
 
 const tabLayout = {
     minW: 'fit-content',
@@ -30,7 +31,8 @@ export const NavbarMain = () => {
 
     const [active, setActive] = useState(null);
     const [scroll, setScroll] = useState(false);
-    const timeOut = useRef(null)
+    const { auth, logout } = useContext(AuthContext);
+    const navigator = useNavigate();
 
 
     window.onscroll = function () {
@@ -58,7 +60,8 @@ export const NavbarMain = () => {
                 <Tabs text='IT Support' name='Show2' active={active} setActive={setActive}><TabPopUp type='A' data={ItsupportData} /></Tabs>
                 <Tabs text='Operations Support' name='Show3' active={active} setActive={setActive}><TabPopUp type='A' data={OpsupportData} /></Tabs>
             </Flex>
-            <NavLink to='/login'><Box {...tabLayout}>Login</Box></NavLink>
+            {/* <NavLink to='/login'><Box {...tabLayout}>{auth.status ? auth.user.name : 'Login'}</Box></NavLink> */}
+            <Box>{auth.status ? auth.user.name : <NavLink to='/login'><Box {...tabLayout}>Login</Box></NavLink>}</Box>
 
         </Flex>}
 
@@ -76,7 +79,11 @@ export const NavbarMain = () => {
                 <TabsB text='Pricing' name='Show6' active={active} setActive={setActive}><Pricing /></TabsB>
                 <TabsB text='Resources' name='Show7' active={active} setActive={setActive}><Resources /></TabsB>
             </Flex>
-            <NavLink to='/signup'><Box bg='#ef4f12' fontSize={'14px'} color='#fff' p='7px 10px' borderRadius={'10px'}>Get a Demo</Box></NavLink>
+            {/*  */}
+            <Box>{auth.status ? <Button onClick={() => {
+                logout();
+                navigator('/login')
+            }}>Logout</Button> : <NavLink to='/signup'><Box bg='#ef4f12' fontSize={'14px'} color='#fff' p='7px 10px' borderRadius={'10px'}>Get a Demo</Box></NavLink>}</Box>
 
         </Flex>
 
