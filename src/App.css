@@ -62,3 +62,7 @@ body .demoButton {
   z-index: 15;
   /* required */
 }
+
+.trans1s {
+  transition: 1s;
+}

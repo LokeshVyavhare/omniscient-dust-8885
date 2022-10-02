@@ -27,7 +27,7 @@ export const Tabs = ({ text, children, name, active, setActive }) => {
 
 
     return <Box>
-        <Box className='popUpTabTrigger' style={active === name ? { borderBottom: '2px solid orange', color: 'black', fontWeight: '700' } : {}} onClick={() => { setActive(name) }}>
+        <Box className='popUpTabTrigger' fontSize={['12px', '12px', '12px', '16px']} style={active === name ? { borderBottom: '2px solid orange', color: 'black', fontWeight: '700' } : {}} onClick={() => { setActive(name) }}>
             {text} {active === name ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </Box>
         {active === name ? <Box className='popUpTabDisaplay'>

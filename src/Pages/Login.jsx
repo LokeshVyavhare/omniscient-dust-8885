@@ -42,9 +42,9 @@ export const Login = () => {
 
 
     return <Box>
-        <Flex>
-            <Box w='50%' pt='100px'>
-                <Box w={['500px']} m=' auto auto 150px' borderRadius='25px' shadow={'lg'} border='1px solid rgb(235,235,235)' p='35px'>
+        <Flex direction={['row']} m='auto' h='90vh'>
+            <Box w={['95%', '93%', '90%', '50%']} pt='100px' mx='auto' >
+                < Box w={['90%', '90%', '90%', '500px']} maxW='500px' m=' auto auto 150px' borderRadius='25px' shadow={'lg'} border='1px solid rgb(235,235,235)' p='35px' >
 
 
                     <Image w='100px' position={'absolute'} mt='-100px' transform={'translate(280px,0)'}
@@ -66,13 +66,14 @@ export const Login = () => {
 
                     </FormControl>
                 </Box>
-            </Box>
+            </Box >
 
 
 
-            <Box w='50%' backgroundRepeat={'no-repeat'} backgroundSize='100%' backgroundImage={'url("https://assets.www.happyfox.com/v2/images/chatbot-bg.png")'}></Box>
-        </Flex>
+            <Box display={['none', 'none', 'none', 'block']} p='15px' w='50%'> <Box w='100%' h='100%' backgroundRepeat={'no-repeat'} backgroundSize='cover' backgroundImage={'url("https://assets.www.happyfox.com/v2/images/chatbot-bg.png")'}></Box></Box>
+
+        </Flex >
 
         <Footer hide={true} />
-    </Box>
+    </Box >
 }

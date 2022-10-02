@@ -47,7 +47,7 @@ export const NavbarMain = () => {
     // console.log(customerData)
     return <Box className='stickTop0'>
         {/* main Navbar */}
-        {scroll ? null : <Flex justify={'space-between'} bg='#f4f6f6' color={'grey'} align='center' p='0 75px'>
+        {scroll ? null : <Flex className='trans1s' justify={'space-between'} bg='#f4f6f6' color={'grey'} align='center' p='0 75px'>
             <NavLink to='/'>
                 <Box>
                     <Image src='https://assets.www.happyfox.com/v2/images/site-nav/topbar-logo-black.svg' alt='logo' />
