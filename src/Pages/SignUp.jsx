@@ -13,6 +13,7 @@ import {
     UnorderedList,
     Stack,
     Select,
+    Button,
 
 } from "@chakra-ui/react"
 import { useRef, useState } from "react"
@@ -20,8 +21,34 @@ import { Footer } from '../Components/HomePageMain_Components/Footer'
 import axios from "axios"
 import { FcOk } from "react-icons/fc";
 import { Icon } from '@chakra-ui/react'
+import { useNavigate } from "react-router-dom";
+import { signup } from "../Functions/SignUp";
 
 export const SignUp = () => {
+
+    const inpMail = useRef(null);
+    const inpPass = useRef(null);
+    const inpName = useRef(null);
+    const inpCompanyName = useRef(null);
+    const inpPhone = useRef(null);
+    const navigator = useNavigate();
+
+    const signUpUser = async () => {
+        let obj = {
+            email: inpMail.current.value,
+            password: inpPass.current.value,
+            name: inpName.current.value,
+            companyName: inpCompanyName.current.value,
+            phone: inpPhone.current.value
+        }
+
+        const response = signup(obj);
+
+        if (response !== undefined) {
+            navigator('/login')
+        }
+    }
+
     return <Box bg='#282c34' mt='-20px' color='#fff'>
         <Flex direction={['column', 'column', 'column', 'row']} m='auto'>
 
@@ -72,14 +99,14 @@ export const SignUp = () => {
 
                     <FormControl display={'flex'} flexDirection='column' align='center'>
 
-                        <Stack display={'flex'} justify='center' align='center'>
-                            <Input bg='#fff' type='text' placeholder='Your Name' />
-                            <Input bg='#fff' type='email' placeholder='Work Email' />
-                            <Input bg='#fff' type='number' placeholder='Phone' />
-                            <Input bg='#fff' type='Text' placeholder='Company Name' />
-                            <Input bg='#fff' type='password' placeholder='Password' />
+                        <Stack color='#000' display={'flex'} justify='center' align='center'>
+                            <Input ref={inpName} bg='#fff' type='text' placeholder='Your Name' />
+                            <Input ref={inpMail} bg='#fff' type='email' placeholder='Work Email' />
+                            <Input ref={inpPhone} bg='#fff' type='number' placeholder='Phone' />
+                            <Input ref={inpCompanyName} bg='#fff' type='Text' placeholder='Company Name' />
+                            <Input ref={inpPass} bg='#fff' type='password' placeholder='Password' />
                             <br />
-                            <Input onClick={() => { }} value='Get Demo' textAlign='center' className='demoButton' />
+                            <Button onClick={signUpUser} textAlign='center' className='demoButton' >Get Demo</Button>
                         </Stack>
 
 

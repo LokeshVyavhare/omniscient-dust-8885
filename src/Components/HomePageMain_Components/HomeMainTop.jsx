@@ -211,7 +211,7 @@ export const HomeMainTop = () => {
             <Flex direction='column' align={'center'} w='60%' m='auto' textAlign={'center'}>
                 <Box mb='25px'><Image src='https://assets.www.happyfox.com/v2/images/pcmag-new-2021.svg?r=1664427113311' /></Box>
                 <Box mb='25px'><Heading>Best Help Desk Software for 6 years in a row.</Heading></Box>
-                <Box w='50%' mb='25px'><Text color='grey'>All-in-one <Text display='inline' cursor='pointer' fontWeight={'700'} color='black'>help desk ticketing system</Text> that provides faster and better support for your customers..</Text></Box>
+                <Box w='50%' mb='25px'><Text color='grey'>All-in-one <span display='inline' cursor='pointer' fontWeight={'700'} color='black'>help desk ticketing system</span> that provides faster and better support for your customers..</Text></Box>
                 <Box mb='25px' border='2px solid black' fontWeight={'700'} borderRadius={'10px'} padding='7px 14px' cursor='pointer' w='fit-content'>Take Tour</Box>
             </Flex>
         </Box>
