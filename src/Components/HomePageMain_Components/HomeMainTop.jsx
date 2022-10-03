@@ -64,6 +64,9 @@ const data_bs = [
 const styles = {
     container: {
         bg: 'rgb(245,245,245)',
+        width: '100%',
+
+        m: 'auto',
         mt: '0',
         pt: '35px'
     },
@@ -199,27 +202,33 @@ export const HomeMainTop = () => {
         </Flex>
 
         {/* Youtube vid */}
-        <Box w={['80%']} h={['600px']} m='35px auto' borderRadius='35px' boxShadow={'dark-lg'}>
+        <Box w={['95%', '80%']} h={['300px', '600px']} m='35px auto' borderRadius='35px' boxShadow={'dark-lg'}>
             {play ?
-                <Box borderRadius='35px' onClick={() => { setPlay(false) }} w='100%' h='100%' p='35px' textAlign='center' backgroundImage={'https://assets.www.happyfox.com/v2/images/version_2_cover_new.jpg'} backgroundSize='100%'>
+                <Box borderRadius='35px' onClick={() => { setPlay(false) }} w='100%' h='100%' p='35px' textAlign='center' backgroundImage={'https://assets.www.happyfox.com/v2/images/version_2_cover_new.jpg'} backgroundRepeat='no-repeat' backgroundSize='100%'>
                     <Flex p='7px 14px' borderRadius={'15px'} w='fit-content' className="hov_blk_trans_back" align='center' m='auto'><Icon boxSize={'30px'} as={AiFillPlayCircle} mr='15px' /><Text fontSize='20px' fontWeight='700'> Watch The Video</Text></Flex>
                 </Box> :
                 <iframe borderRadius='35px' width="100%" height="100%" src="https://www.youtube.com/embed/cD0FfdHdNis?autoplay=0&controls=0"></iframe>}
         </Box>
+
+
         {/* sec3 */}
         <Box p='100px 0 0' bg='#fff'>
-            <Flex direction='column' align={'center'} w='60%' m='auto' textAlign={'center'}>
+            <Flex direction='column' align={'center'} w={{ base: '90%', sm: '90%', md: '70%', lg: '60%' }} m='auto' textAlign={'center'}>
                 <Box mb='25px'><Image src='https://assets.www.happyfox.com/v2/images/pcmag-new-2021.svg?r=1664427113311' /></Box>
                 <Box mb='25px'><Heading>Best Help Desk Software for 6 years in a row.</Heading></Box>
-                <Box w='50%' mb='25px'><Text color='grey'>All-in-one <span display='inline' cursor='pointer' fontWeight={'700'} color='black'>help desk ticketing system</span> that provides faster and better support for your customers..</Text></Box>
+                <Box w={{ base: '90%', sm: '90%', md: '70%', lg: '60%' }} mb='25px'><Text color='grey'>All-in-one <span display='inline' cursor='pointer' fontWeight={'700'} color='black'>help desk ticketing system</span> that provides faster and better support for your customers..</Text></Box>
                 <Box mb='25px' border='2px solid black' fontWeight={'700'} borderRadius={'10px'} padding='7px 14px' cursor='pointer' w='fit-content'>Take Tour</Box>
             </Flex>
         </Box>
+
+
+
+
         {/* sec4 */}
         <Box p='100px 0'>
             <Box textAlign={'center'}>
                 <Text>Trusted by Industry-Leading Companies</Text>
-                <Flex align='center' justify={'space-around'} w='80%' m='auto'>
+                <Flex align='center' justify={'space-around'} w={{ base: '90%', sm: '90%', md: '70%', lg: '60%' }} m='auto'>
                     <Box w='120px'><Image w='100%' src='https://assets.www.happyfox.com/v2/logo/owler-logo.png' /></Box>
                     <Box w='120px'><Image w='100%' src='https://assets.www.happyfox.com/v2/logo/whirlpool.svg' /></Box>
                     <Box w='120px'><Image w='100%' src='https://assets.www.happyfox.com/v2/logo/jabra.svg' /></Box>
@@ -235,7 +244,7 @@ export const HomeMainTop = () => {
         </Box>
         {/* Section 6 */}
         <Box className="grad" w='100%' color='#fff' textAlign={'center'} padding='45px' overflow={'hidden'}>
-            <Box bg='#fff' w='130%' h='200px' ml='-15%' mt='-100px' mb='50px' transform='rotate(-5deg)' transformOrigin='0 0'>
+            <Box bg='#fff' w='130%' h='200px' display={{ base: 'none', lg: 'block' }} ml='-15%' mt='-100px' mb='50px' transform='rotate(-5deg)' transformOrigin='0 0'>
 
             </Box>
 
@@ -245,9 +254,9 @@ export const HomeMainTop = () => {
 
 
 
-            <Grid gridTemplateColumns={['1fr', '1fr 1fr', '1fr 1fr']} gap='55px 0px' mt='75px'>
+            <Grid gridTemplateColumns={['1fr', '1fr', '1fr', '1fr 1fr']} gap='55px 0px' mt='75px'>
 
-                {data_Ai.map((item) => <GridItem  {...styles.sec6.GridItem} className='hoverBlackBg' key={item.id}>
+                {data_Ai.map((item) => <GridItem overflow={'scroll'} minH='fit-content' {...styles.sec6.GridItem} className='hoverBlackBg' key={item.id}>
                     <Flex {...styles.sec6.flex.style}>
                         <Image {...styles.sec6.flex.image} src={item.image} />
                         <Box {...styles.sec6.flex.box.style}>
@@ -259,7 +268,7 @@ export const HomeMainTop = () => {
 
             </Grid>
 
-            <Box m='10em auto 0' w={['500px']}>
+            <Box m={['25px auto 0', '50px auto 0']} w={['500px']}>
                 <NavLink to='/signup'><Box className='demoButton'>Get a Demo</Box></NavLink>
             </Box>
 
@@ -272,7 +281,7 @@ export const HomeMainTop = () => {
 
 
 
-            <Grid gridTemplateColumns={['1fr', '1fr 1fr', '1fr 1fr']} gap='55px 0px' mt='75px'>
+            <Grid gridTemplateColumns={['1fr', '1fr', '1fr', '1fr 1fr']} gap='55px 0px' mt='75px'>
 
                 {data_bs.map((item) => <GridItem  {...styles.sec7.GridItem} borderColor={item.bd} className='hovergreyBg' key={item.id}>
                     <Flex {...styles.sec7.flex.style}>

@@ -9,6 +9,5 @@ export const TabsQ = (prop) => {
             {text}
         </Box>
 
-        <Box className='popup'>{active === name ? children : null}</Box>
     </Box>
 }

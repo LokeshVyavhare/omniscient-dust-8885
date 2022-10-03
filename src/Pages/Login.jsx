@@ -5,7 +5,10 @@ import {
     FormHelperText,
     Input, Heading,
     Image,
-    Checkbox
+    Checkbox, Alert,
+    AlertIcon,
+    AlertTitle,
+    AlertDescription,
 
 } from "@chakra-ui/react"
 import { useRef, useState, useContext, useEffect } from "react"
@@ -14,6 +17,7 @@ import { AuthContext } from '../Contexts/AuthContext'
 import { Footer } from '../Components/HomePageMain_Components/Footer'
 import axios from "axios"
 import { checkUser } from "../Functions/login"
+import { useToast } from '@chakra-ui/react'
 
 export const Login = () => {
 
@@ -21,6 +25,7 @@ export const Login = () => {
     const inpPass = useRef(null);
     const [loginStatus, setlgStatus] = useState(false);
     const navigator = useNavigate();
+    const toast = useToast();
 
     const { auth, login } = useContext(AuthContext);
 
@@ -40,16 +45,40 @@ export const Login = () => {
 
 
         if (!response.userStatus) {
-            alert('wrong username')
+            toast({
+                title: 'No user Found',
+                description: "No account with such email",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
         } else if (!response.passStatus) {
-            alert('Wrong Password')
+            toast({
+                title: 'Wrong Credentials.',
+                description: "Please Check Email & Password",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
         } else if (response.passStatus) {
-            console.log(response)
-            alert(`Successfully logged in as ${response.user.name}`);
+            toast({
+                title: 'Logged In',
+                description: "You are successfully logged in!",
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+            })
             login(response.user);
             navigator('/');
 
         } else {
+            toast({
+                title: 'Error',
+                description: "something Went wrong please try again",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
             alert('something Went wrong please try again')
         }
 
@@ -59,6 +88,7 @@ export const Login = () => {
 
 
     return <Box>
+
         <Flex direction={['row']} m='auto'>
             <Box w={['95%', '93%', '90%', '50%']} pt='100px' mx='auto' >
                 < Box w={['90%', '90%', '90%', '500px']} maxW='500px' m=' auto auto 150px' borderRadius='25px' shadow={'lg'} border='1px solid rgb(235,235,235)' p='35px' >

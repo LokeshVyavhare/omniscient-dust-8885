@@ -1,7 +1,6 @@
 .trigger {}
 
 .popup {
-    position: absolute;
     width: 100%;
     left: 0;
     background-color: #fff;
@@ -15,19 +14,13 @@
 
 .popupFlex {
 
-    width: 85%;
     margin: auto;
     align-items: center;
-    height: 400px;
     justify-content: space-evenly;
     animation: normal 0.3s slide;
 }
 
-.popupImgBox,
-.popupTxtBox {
 
-    width: 45%;
-}
 
 .popupImgBox img {
     width: 100%;

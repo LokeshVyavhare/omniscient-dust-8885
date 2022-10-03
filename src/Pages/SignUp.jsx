@@ -23,6 +23,7 @@ import { FcOk } from "react-icons/fc";
 import { Icon } from '@chakra-ui/react'
 import { useNavigate } from "react-router-dom";
 import { signup } from "../Functions/SignUp";
+import { useToast } from '@chakra-ui/react'
 
 export const SignUp = () => {
 
@@ -32,8 +33,10 @@ export const SignUp = () => {
     const inpCompanyName = useRef(null);
     const inpPhone = useRef(null);
     const navigator = useNavigate();
+    const toast = useToast();
 
-    const signUpUser = async () => {
+    const signUpUser = async (e) => {
+        e.preventDefault();
         let obj = {
             email: inpMail.current.value,
             password: inpPass.current.value,
@@ -41,11 +44,34 @@ export const SignUp = () => {
             companyName: inpCompanyName.current.value,
             phone: inpPhone.current.value
         }
+        let valid = true;
+        if (obj.email === '' || obj.password === '' || obj.name === '' || obj.companyName === '' || obj.phone === '') {
+            valid = false
+        }
 
         const response = signup(obj);
 
         if (response !== undefined) {
-            navigator('/login')
+
+            toast({
+                title: 'Account created.',
+                description: "We've created your account for you.",
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+            })
+            setTimeout(() => {
+                navigator('/login')
+            }, 1000)
+        } else {
+            toast({
+                title: 'Error',
+                description: "SomeThing Went Wrong Please Try Again!",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
+
         }
     }
 
@@ -97,22 +123,23 @@ export const SignUp = () => {
 
                     <Heading w='fit-content' m='auto' mb='35px' fontWeight='500'>See HappyFox in Action</Heading>
 
-                    <FormControl display={'flex'} flexDirection='column' align='center'>
+                    <form onSubmit={signUpUser} >
 
                         <Stack color='#000' display={'flex'} justify='center' align='center'>
-                            <Input ref={inpName} bg='#fff' type='text' placeholder='Your Name' />
-                            <Input ref={inpMail} bg='#fff' type='email' placeholder='Work Email' />
-                            <Input ref={inpPhone} bg='#fff' type='number' placeholder='Phone' />
-                            <Input ref={inpCompanyName} bg='#fff' type='Text' placeholder='Company Name' />
-                            <Input ref={inpPass} bg='#fff' type='password' placeholder='Password' />
+                            <Input required={true} ref={inpName} bg='#fff' type='text' placeholder='Your Name' />
+                            <Input required={true} ref={inpMail} bg='#fff' type='email' placeholder='Work Email' />
+                            <Input required={true} ref={inpPhone} bg='#fff' type='number' placeholder='Phone' />
+                            <Input required={true} ref={inpCompanyName} bg='#fff' type='Text' placeholder='Company Name' />
+                            <Input required={true} ref={inpPass} bg='#fff' type='password' placeholder='Password' />
                             <br />
-                            <Button onClick={signUpUser} textAlign='center' className='demoButton' >Get Demo</Button>
+                            <Button type='submit' textAlign='center' className='demoButton' >Get Demo</Button>
                         </Stack>
 
 
 
 
-                    </FormControl>
+
+                    </form>
                 </Box>
             </Box >
 

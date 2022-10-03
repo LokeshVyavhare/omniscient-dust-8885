@@ -3,7 +3,7 @@ import { HomeMainTop } from "../Components/HomePageMain_Components/HomeMainTop"
 import { Footer } from "../Components/HomePageMain_Components/Footer"
 
 export const Home = () => {
-    return <Box>
+    return <Box w={['140%', '100%', '100%']}>
         <Box>
             {/* main home page */}
             <HomeMainTop />
